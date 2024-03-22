@@ -34,6 +34,9 @@ ChartJS.register(
   ChartDataLabels
 );
 
+const basePath =
+  process.env.NODE_ENV === "production" ? "/population-chart" : "";
+
 const Chart = () => {
   const isMounted = useRef(false);
 
@@ -53,7 +56,9 @@ const Chart = () => {
   });
 
   const getData = async () => {
-    const data: any = await readCSV("/data/population-and-demography.csv");
+    const data: any = await readCSV(
+      `${basePath}/data/population-and-demography.csv`
+    );
     if (data) {
       const regionAll: any = await getRegion();
 
