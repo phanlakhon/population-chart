@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+* {
+  transition: all 0.25s ease;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  border-bottom: 1px solid black;
+  background: transparent;
+  cursor: pointer;
+}
+
+.range-value {
+  display: flex;
+  justify-content: center;
+}
+
+/* .range-value::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  background: black;
+  width: 1px;
+  height: 10px;
+  transform: translateY(-50%);
+}
+
+.range-value:first-child:after {
+  left: 0;
+} */
