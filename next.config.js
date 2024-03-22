@@ -1,22 +1,14 @@
-/** @type {import('next').NextConfig} */
+const isProd = process.env.NODE_ENV === "production";
+
 const nextConfig = {
-  basePath: "/population-chart",
-  assetPrefix: "/population-chart/",
+  // assetPrefix: "/population-chart/",
+  basePath: isProd ? "/population-chart" : undefined,
   trailingSlash: true,
   output: "export",
   reactStrictMode: true,
-  // images: {
-  //   unoptimized: true,
-  // },
-
-  // async rewrites() {
-  //   return [
-  //     {
-  //       source: "/population-chart/:path*",
-  //       destination: "/:path*", // The :path parameter is used here so will not be automatically passed in the query object.
-  //     },
-  //   ];
-  // },
+  images: {
+    unoptimized: true,
+  },
 };
 
 module.exports = nextConfig;
